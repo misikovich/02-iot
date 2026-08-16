@@ -1,25 +1,25 @@
 /**
-  Generated main.c file from MPLAB Code Configurator
+  System Traps Generated Driver File 
 
-  @Company
+  @Company:
     Microchip Technology Inc.
 
-  @File Name
-    main.c
+  @File Name:
+    traps.h
 
-  @Summary
-    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
+  @Summary:
+    This is the generated driver implementation file for handling traps
+    using PIC24 / dsPIC33 / PIC32MM MCUs
 
-  @Description
-    This source file provides main entry point for system initialization and application code development.
-    Generation Information :
+  @Description:
+    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs traps.
+    Generation Information : 
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24EP128MC206
     The generated drivers are tested against the following:
         Compiler          :  XC16 v2.10
-        MPLAB 	          :  MPLAB X v6.05
+        MPLAB             :  MPLAB X v6.05
 */
-
 /*
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,27 +42,49 @@
     TERMS.
 */
 
-/**
-  Section: Included Files
-*/
-#include "mcc_generated_files/system.h"
+#ifndef _TRAPS_H
+#define _TRAPS_H
 
-/*
-                         Main application
+#include <stdint.h>
+
+/**
+ * Error codes
  */
-int main(void)
+typedef enum 
 {
-    // initialize the device
-    SYSTEM_Initialize();
+    /* ----- Traps ----- */
+    TRAPS_OSC_FAIL = 0, /** Oscillator Fail Trap vector */
+    TRAPS_STACK_ERR = 1, /** Stack Error Trap Vector */
+    TRAPS_ADDRESS_ERR = 2, /** Address error Trap vector */
+    TRAPS_MATH_ERR = 3, /** Math Error Trap vector */
+    TRAPS_DMAC_ERR = 4, /** DMAC Error Trap vector */
+    TRAPS_HARD_ERR = 7, /** Generic Hard Trap vector */
+    TRAPS_DAE_ERR = 9, /** Generic Soft Trap vector */
+    TRAPS_DOOVR_ERR = 10, /** Generic Soft Trap vector */
+} TRAPS_ERROR_CODE;
 
-    while (1)
-    {
-        // Add your application code
-    }
-
-    return 1;
-}
 /**
- End of File
-*/
+  @Summary
+    Default handler for the traps
 
+  @Description
+    This routine will be called whenever a trap happens. It stores the trap
+    error code and waits forever.
+    This routine has a weak attribute and can be over written.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    None.
+
+*/
+void TRAPS_halt_on_error(uint16_t code);
+
+#endif

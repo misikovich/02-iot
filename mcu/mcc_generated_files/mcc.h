@@ -1,23 +1,23 @@
 /**
-  Generated main.c file from MPLAB Code Configurator
+  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
 
-  @Company
+  @Company:
     Microchip Technology Inc.
 
-  @File Name
-    main.c
+  @File Name:
+    mcc.h
 
-  @Summary
-    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
+  @Summary:
+    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
 
-  @Description
-    This source file provides main entry point for system initialization and application code development.
+  @Description:
+    This file will be removed in future MCC releases. Use system.h instead.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24EP128MC206
     The generated drivers are tested against the following:
         Compiler          :  XC16 v2.10
-        MPLAB 	          :  MPLAB X v6.05
+        MPLAB             :  MPLAB X v6.05
 */
 
 /*
@@ -42,27 +42,29 @@
     TERMS.
 */
 
-/**
-  Section: Included Files
-*/
-#include "mcc_generated_files/system.h"
+#ifndef MCC_H
+#define	MCC_H
+#include <xc.h>
+#include "system.h"
+#include "clock.h"
+#include "pin_manager.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "system_types.h"
+#include "reset.h"
 
-/*
-                         Main application
- */
-int main(void)
-{
-    // initialize the device
-    SYSTEM_Initialize();
+#include "oc1.h"
+#include "watchdog.h"
+#include "interrupt_manager.h"
+#include "traps.h"
+#include "oc4.h"
+#include "oc3.h"
+#include "reset.h"
+#include "oc2.h"
 
-    while (1)
-    {
-        // Add your application code
-    }
+#warning "This file will be removed in future MCC releases. Use system.h instead."
 
-    return 1;
-}
+#endif	/* MCC_H */
 /**
  End of File
 */
-

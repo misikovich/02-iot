@@ -1,23 +1,23 @@
 /**
-  Generated main.c file from MPLAB Code Configurator
+  WATCHDOG Generated Driver File
 
   @Company
     Microchip Technology Inc.
 
   @File Name
-    main.c
+    watchdog.h
 
   @Summary
-    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
+    This is the generated driver implementation file for the WATCHDOG driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description
-    This source file provides main entry point for system initialization and application code development.
+    This header file provides implementations for driver APIs for WATCHDOG.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24EP128MC206
     The generated drivers are tested against the following:
         Compiler          :  XC16 v2.10
-        MPLAB 	          :  MPLAB X v6.05
+        MPLAB             :  MPLAB X v6.05
 */
 
 /*
@@ -42,27 +42,50 @@
     TERMS.
 */
 
+#ifndef WATCHDOG_H
+#define	WATCHDOG_H
+
 /**
-  Section: Included Files
-*/
-#include "mcc_generated_files/system.h"
+  Section: Type defines
+ */ 
 
-/*
-                         Main application
+/**
+ * Enables Watch Dog Timer (WDT) using the software bit.
+ * @example
+ * <code>
+ * WATCHDOG_TimerSoftwareEnable();
+ * </code>
  */
-int main(void)
+inline static void WATCHDOG_TimerSoftwareEnable(void)
 {
-    // initialize the device
-    SYSTEM_Initialize();
-
-    while (1)
-    {
-        // Add your application code
-    }
-
-    return 1;
+    RCONbits.SWDTEN = 1;
 }
+
+/**
+ * Disables Watch Dog Timer (WDT) using the software bit.
+ * @example
+ * <code>
+ * WATCHDOG_TimerSoftwareDisable();
+ * </code>
+ */
+inline static void WATCHDOG_TimerSoftwareDisable(void)
+{
+    RCONbits.SWDTEN = 0;
+}
+
+/**
+ * Clears the Watch Dog Timer (WDT).
+ * @example
+ * <code>
+ * WATCHDOG_TimerClear();
+ * </code>
+ */
+inline static void WATCHDOG_TimerClear(void)
+{
+    ClrWdt();
+}
+
+#endif	/* WATCHDOG_H */
 /**
  End of File
 */
-

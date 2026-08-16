@@ -1,23 +1,23 @@
 /**
-  Generated main.c file from MPLAB Code Configurator
+  RESET Generated Driver File
 
   @Company
     Microchip Technology Inc.
 
   @File Name
-    main.c
+    reset.c
 
   @Summary
-    This is the generated main.c using PIC24 / dsPIC33 / PIC32MM MCUs.
+    This is the generated driver implementation file for the RESET driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description
-    This source file provides main entry point for system initialization and application code development.
+    This header file provides implementations for driver APIs for RESET.
     Generation Information :
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24EP128MC206
     The generated drivers are tested against the following:
         Compiler          :  XC16 v2.10
-        MPLAB 	          :  MPLAB X v6.05
+        MPLAB             :  MPLAB X v6.05
 */
 
 /*
@@ -42,27 +42,43 @@
     TERMS.
 */
 
+#ifndef RESET_H
+#define	RESET_H
+
+#include <stdint.h>
+#include "reset_types.h"
+
 /**
-  Section: Included Files
+* Checks reset cause, flashes UI with an error code as a result.
+* 
+* Note: this function should be called before any use of CLRWDT
+* since it has a side-effect of clearing the appropriate bits in the
+* register showing reset cause (see DS70602B page 8-10)
 */
-#include "mcc_generated_files/system.h"
+uint16_t RESET_GetCause(void);
 
-/*
-                         Main application
+/**
+ * It handles the reset cause by clearing the cause register values.
+ * Its a weak function user can override this function.
+ * @return None
+ * @example
+ * <code>
+ * RESET_CauseHandler();
+ * </code>
  */
-int main(void)
-{
-    // initialize the device
-    SYSTEM_Initialize();
+void RESET_CauseHandler(void);
 
-    while (1)
-    {
-        // Add your application code
-    }
+/**
+ * This function resets the reset cause register.
+ * @return None
+ * @example
+ * <code>
+ * RESET_CauseClearAll();
+ * </code>
+ */
+void RESET_CauseClearAll();
 
-    return 1;
-}
+#endif	/* RESET_H */
 /**
  End of File
 */
-
