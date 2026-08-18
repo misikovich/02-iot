@@ -65,6 +65,7 @@ This repository contains the firmware project for the **Microchip PIC24EP128MC20
 ## Project Structure
 - `main.c`: Application entry point (`main()`) initializing FreeRTOS tasks and starting scheduler.
 - `al.h`: Abstraction Layer providing FreeRTOS and peripheral wrappers adhering to project naming standards.
+- `led.c` / `led.h`: Universal normalized LED output interface backed by driver callbacks.
 - `FreeRTOSConfig.h`: FreeRTOS kernel configuration (1 kHz tick rate, 69.09375 MHz CPU instruction clock, preemption enabled, 4KB heap).
 - `FreeRTOS/`: FreeRTOS V11 kernel and PIC24/dsPIC port files:
   - `FreeRTOS/Source/`: Kernel implementation files (`tasks.c`, `queue.c`, `list.c`, `timers.c`, `event_groups.c`, `stream_buffer.c`).

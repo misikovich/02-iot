@@ -50,6 +50,24 @@ typedef int64_t  i64;
 #define abs(v)           ((v) < 0 ? -(v) : (v))
 #endif
 
+#define AL_PWM_MAX       3454
+
+/**
+ * @brief Maps/interpolates an 8-bit value (0..255) to a full 16-bit range (0..65535).
+ */
+static inline u16 u16_lerp8(u8 val)
+{
+    return (u16)(((u16)val << 8) | (u16)val);
+}
+
+/**
+ * @brief Maps/interpolates an 8-bit value (0..255) to the hardware PWM resolution (0..AL_PWM_MAX).
+ */
+static inline u16 pwm_lerp8(u8 v)
+{
+    return (u16)(((u32)v * AL_PWM_MAX) / 255);
+}
+
 /* -------------------------------------------------------------------------- */
 /* RTOS & Hardware Abstraction Interfaces                                     */
 /* -------------------------------------------------------------------------- */
