@@ -246,6 +246,11 @@ void hid_tick(void)
     }
 
     now_ms = al_millis();
+    for (i = 0; i < hid_led_count; i++)
+    {
+        hid_led_update(&hid_leds[i], now_ms);
+    }
+
     command_count = 0;
 
     while (
@@ -258,7 +263,6 @@ void hid_tick(void)
 
     for (i = 0; i < hid_led_count; i++)
     {
-        hid_led_update(&hid_leds[i], now_ms);
 
         if (hid_leds[i].dirty)
         {

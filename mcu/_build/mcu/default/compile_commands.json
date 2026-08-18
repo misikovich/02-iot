@@ -25,6 +25,12 @@
 },
 {
   "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
+  "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/log.c.o -c /home/ss1/Projects/02-iot/mcu/log.c",
+  "file": "/home/ss1/Projects/02-iot/mcu/log.c",
+  "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/log.c.o"
+},
+{
+  "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
   "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o -c /home/ss1/Projects/02-iot/mcu/main.c",
   "file": "/home/ss1/Projects/02-iot/mcu/main.c",
   "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o"
@@ -34,6 +40,18 @@
   "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o -c /home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c",
   "file": "/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c",
   "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o"
+},
+{
+  "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
+  "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c.o -c /home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c",
+  "file": "/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c",
+  "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c.o"
+},
+{
+  "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
+  "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c.o -c /home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c",
+  "file": "/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c",
+  "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c.o"
 },
 {
   "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
@@ -94,5 +112,17 @@
   "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c.o -c /home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c",
   "file": "/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c",
   "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c.o"
+},
+{
+  "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
+  "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c.o -c /home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c",
+  "file": "/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c",
+  "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c.o"
+},
+{
+  "directory": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default",
+  "command": "/opt/microchip/xc16/v2.10/bin/xc16-gcc -DXPRJ_default=default -D__DEBUG -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../.. -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16 -o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c.o -c /home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c",
+  "file": "/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c",
+  "output": "/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c.o"
 }
 ]

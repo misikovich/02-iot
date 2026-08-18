@@ -104,6 +104,17 @@ build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/m
   TARGET_PDB = ""
   TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
 
+build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/log.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/log.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
+  DEFINES = -DXPRJ_default=default -D__DEBUG
+  DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/log.c.o.d
+  FLAGS = -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
+  INCLUDES = -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..
+  OBJECT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+  OBJECT_FILE_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu
+  TARGET_COMPILE_PDB = CMakeFiles/mcu_default_default_XC16_compile.dir/
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+
 build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/main.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
   DEFINES = -DXPRJ_default=default -D__DEBUG
   DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o.d
@@ -118,6 +129,28 @@ build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/m
 build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
   DEFINES = -DXPRJ_default=default -D__DEBUG
   DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o.d
+  FLAGS = -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
+  INCLUDES = -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..
+  OBJECT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+  OBJECT_FILE_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files
+  TARGET_COMPILE_PDB = CMakeFiles/mcu_default_default_XC16_compile.dir/
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+
+build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
+  DEFINES = -DXPRJ_default=default -D__DEBUG
+  DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c.o.d
+  FLAGS = -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
+  INCLUDES = -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..
+  OBJECT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+  OBJECT_FILE_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files
+  TARGET_COMPILE_PDB = CMakeFiles/mcu_default_default_XC16_compile.dir/
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+
+build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
+  DEFINES = -DXPRJ_default=default -D__DEBUG
+  DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c.o.d
   FLAGS = -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
   INCLUDES = -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..
   OBJECT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
@@ -236,12 +269,34 @@ build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/m
   TARGET_PDB = ""
   TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
 
+build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
+  DEFINES = -DXPRJ_default=default -D__DEBUG
+  DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c.o.d
+  FLAGS = -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
+  INCLUDES = -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..
+  OBJECT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+  OBJECT_FILE_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files
+  TARGET_COMPILE_PDB = CMakeFiles/mcu_default_default_XC16_compile.dir/
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+
+build CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c.o: C_COMPILER__mcu_default_default_XC16_compile_unscanned_ /home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c || cmake_object_order_depends_target_mcu_default_default_XC16_compile
+  DEFINES = -DXPRJ_default=default -D__DEBUG
+  DEP_FILE = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c.o.d
+  FLAGS = -x c -g -mcpu=24EP128MC206 -O0 -msmart-io=1 -Wall -msfr-warn=off -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
+  INCLUDES = -I/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..
+  OBJECT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+  OBJECT_FILE_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files
+  TARGET_COMPILE_PDB = CMakeFiles/mcu_default_default_XC16_compile.dir/
+  TARGET_PDB = ""
+  TARGET_SUPPORT_DIR = CMakeFiles/mcu_default_default_XC16_compile.dir
+
 
 
 #############################################
 # Object library mcu_default_default_XC16_compile
 
-build mcu_default_default_XC16_compile: phony CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/blinker.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/hid.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/led.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/interrupt_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/mcc.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc2.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc3.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc4.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/pin_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/reset.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/system.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c.o
+build mcu_default_default_XC16_compile: phony CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/blinker.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/hid.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/led.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/log.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/interrupt_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/mcc.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc2.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc3.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc4.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/pin_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/reset.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/system.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c.o
 
 # =============================================================================
 # Object build statements for EXECUTABLE target mcu_default_image_igA9NkaQ
@@ -260,7 +315,7 @@ build cmake_object_order_depends_target_mcu_default_image_igA9NkaQ: phony || cma
 #############################################
 # Link the executable /home/ss1/Projects/02-iot/mcu/out/mcu/default.elf
 
-build /home/ss1/Projects/02-iot/mcu/out/mcu/default.elf: C_EXECUTABLE_LINKER__mcu_default_image_igA9NkaQ_ CMakeFiles/mcu_default_default_XC16_assemble.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/where_was_i.s.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/blinker.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/hid.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/led.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/interrupt_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/mcc.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc2.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc3.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc4.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/pin_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/reset.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/system.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c.o || mcu_default_default_XC16_assemble mcu_default_default_XC16_compile
+build /home/ss1/Projects/02-iot/mcu/out/mcu/default.elf: C_EXECUTABLE_LINKER__mcu_default_image_igA9NkaQ_ CMakeFiles/mcu_default_default_XC16_assemble.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/where_was_i.s.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/blinker.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/hid.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/led.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/log.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/main.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/clock.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/ext_int.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/i2c1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/interrupt_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/mcc.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc2.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc3.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/oc4.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/pin_manager.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/reset.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/system.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/traps.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart1.c.o CMakeFiles/mcu_default_default_XC16_compile.dir/home/ss1/Projects/02-iot/mcu/mcc_generated_files/uart2.c.o || mcu_default_default_XC16_assemble mcu_default_default_XC16_compile
   LINK_FLAGS = -g -mcpu=24EP128MC206 -Wl,--script=p24EP128MC206.gld,--local-stack,--defsym=__MPLAB_BUILD=1,--defsym=__MPLAB_DEBUG=1,--defsym=__DEBUG=1,-D__DEBUG=__DEBUG,--stack=16,--check-sections,--data-init,--pack-data,--handles,--isr,--no-gc-sections,--fill-upper=0,--stackguard=16,--library-path=/home/ss1/Projects/02-iot/mcu/cmake/mcu/default/../../..,--no-force-link,--smart-io,--report-mem,--memorysummary,memoryfile.xml -mdfp=/home/ss1/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16
   OBJECT_DIR = CMakeFiles/mcu_default_image_igA9NkaQ.dir
   POST_BUILD = :

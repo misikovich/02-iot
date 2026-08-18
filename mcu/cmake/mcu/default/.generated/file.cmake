@@ -19,8 +19,11 @@ set(mcu_default_default_XC16_FILE_TYPE_compile
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../blinker.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../hid.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../led.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../log.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../main.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/clock.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/ext_int.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/i2c1.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/interrupt_manager.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/mcc.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/oc1.c"
@@ -30,7 +33,9 @@ set(mcu_default_default_XC16_FILE_TYPE_compile
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/pin_manager.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/reset.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/system.c"
-    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/traps.c")
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/traps.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/uart1.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/uart2.c")
 set_source_files_properties(${mcu_default_default_XC16_FILE_TYPE_compile} PROPERTIES LANGUAGE C)
 set(mcu_default_default_XC16_FILE_TYPE_link)
 set(mcu_default_default_XC16_FILE_TYPE_bin2hex)

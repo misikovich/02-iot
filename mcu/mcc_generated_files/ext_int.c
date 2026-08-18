@@ -1,18 +1,20 @@
+
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
+  EXT_INT Generated Driver File 
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    ext_int.c
 
-  @Summary:
-    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
+  @Summary
+    This is the generated driver implementation file for the EXT_INT 
+    driver using PIC24 / dsPIC33 / PIC32MM MCUs
 
   @Description:
-    This file will be removed in future MCC releases. Use system.h instead.
-    Generation Information :
+    This source file provides implementations for driver APIs for EXT_INT. 
+    Generation Information : 
         Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.5
         Device            :  PIC24EP128MC206
     The generated drivers are tested against the following:
@@ -42,33 +44,55 @@
     TERMS.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "system.h"
-#include "clock.h"
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "system_types.h"
-#include "reset.h"
-
-#include "uart2.h"
-#include "ext_int.h"
-#include "uart1.h"
-#include "reset.h"
-#include "oc1.h"
-#include "oc4.h"
-#include "i2c1.h"
-#include "oc3.h"
-#include "oc2.h"
-#include "watchdog.h"
-#include "interrupt_manager.h"
-#include "traps.h"
-
-#warning "This file will be removed in future MCC releases. Use system.h instead."
-
-#endif	/* MCC_H */
 /**
- End of File
+   Section: Includes
+ */
+
+#include "ext_int.h"
+
+//***User Area Begin->code: Add External Interrupt handler specific headers 
+
+//***User Area End->code: Add External Interrupt handler specific headers
+
+/**
+   Section: External Interrupt Handlers
 */
+ 
+ void __attribute__ ((weak)) EX_INT0_CallBack(void)
+{
+    // Add your custom callback code here
+}
+
+/**
+  Interrupt Handler for EX_INT0 - INT0
+*/
+void __attribute__ ( ( interrupt, no_auto_psv ) ) _INT0Interrupt(void)
+{
+    //***User Area Begin->code: External Interrupt 0***
+	
+	EX_INT0_CallBack();
+    
+	//***User Area End->code: External Interrupt 0***
+    EX_INT0_InterruptFlagClear();
+}
+/**
+    Section: External Interrupt Initializers
+ */
+/**
+    void EXT_INT_Initialize(void)
+
+    Initializer for the following external interrupts
+    INT0
+*/
+void EXT_INT_Initialize(void)
+{
+    /*******
+     * INT0
+     * Clear the interrupt flag
+     * Set the external interrupt edge detect
+     * Enable the interrupt, if enabled in the UI. 
+     ********/
+    EX_INT0_InterruptFlagClear();   
+    EX_INT0_NegativeEdgeSet();
+    EX_INT0_InterruptEnable();
+}

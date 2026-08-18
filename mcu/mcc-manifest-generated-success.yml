@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: mcu
-creation_date: 2026-08-15T11:23:56.341+02:00[Europe/Oslo]
+creation_date: 2026-08-18T18:47:52.123+02:00[Europe/Oslo]
 operating_system: Linux
 mcc_mode: IDE
 mcc_mode_version: v6.35
@@ -18,4 +18,6 @@ device_library: {library_class: com.microchip.mcc.mcu16.Mcu16PeripheralLibrary, 
     / dsPIC33 / PIC32MM MCUs, version: 1.171.5}
 packs: {name: N/A, version: N/A}
 modules:
+- {name: com.microchip.mcc.foundationservices.library.FoundationServicesLibrary, type: CLASSIC,
+  version: 0.2.3}
 - {name: com.microchip.mcc.mcu16.Mcu16PeripheralLibrary, type: CLASSIC, version: 1.171.5}

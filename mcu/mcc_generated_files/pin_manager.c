@@ -72,9 +72,9 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the GPIO Direction SFR(s)
      ***************************************************************************/
-    TRISA = 0x1F93;
-    TRISB = 0xFA9F;
-    TRISC = 0x3FFF;
+    TRISA = 0x1F83;
+    TRISB = 0xFA8F;
+    TRISC = 0x3FF7;
     TRISD = 0x0160;
     TRISE = 0xF000;
     TRISF = 0x0003;
@@ -112,7 +112,7 @@ void PIN_MANAGER_Initialize (void)
     /****************************************************************************
      * Setting the Analog/Digital Configuration SFR(s)
      ***************************************************************************/
-    ANSELA = 0x1813;
+    ANSELA = 0x1803;
     ANSELB = 0x0003;
     ANSELC = 0x0807;
     ANSELE = 0xF000;
@@ -122,10 +122,14 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
 
+    RPOR1bits.RP36R = 0x0003;    //RB4->UART2:U2TX
+    RPINR19bits.U2RXR = 0x0018;    //RA8->UART2:U2RX
+    RPOR4bits.RP42R = 0x0011;    //RB10->OC2:OC2
+    RPOR3bits.RP40R = 0x0010;    //RB8->OC1:OC1
+    RPOR0bits.RP20R = 0x0001;    //RA4->UART1:U1TX
+    RPINR18bits.U1RXR = 0x0019;    //RA9->UART1:U1RX
     RPOR2bits.RP38R = 0x0012;    //RB6->OC3:OC3
     RPOR1bits.RP37R = 0x0013;    //RB5->OC4:OC4
-    RPOR3bits.RP40R = 0x0010;    //RB8->OC1:OC1
-    RPOR4bits.RP42R = 0x0011;    //RB10->OC2:OC2
 
     __builtin_write_OSCCONL(OSCCON | 0x40); // lock PPS
 }

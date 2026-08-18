@@ -1,4 +1,5 @@
 #include "blinker.h"
+#include "log.h"
 
 #include "mcc_generated_files/oc1.h"
 #include "mcc_generated_files/oc3.h"
@@ -23,6 +24,7 @@ typedef struct
     Led led;
     u32 phase_started_at_ms;
     BlinkerPhase phase;
+    LogBlinkerSide side;
 } BlinkerState;
 
 static volatile bool blinker_l_enabled;
@@ -30,12 +32,14 @@ static volatile bool blinker_r_enabled;
 
 static void blinker_l_drive(u8 value)
 {
-    OC3_SecondaryValueSet(pwm_lerp8(value));
+    OC3_PrimaryValueSet(pwm_lerp8(value));
+    log_write(LOG_EVENT_BLINKER_OUTPUT, LOG_BLINKER_L, value);
 }
 
 static void blinker_r_drive(u8 value)
 {
-    OC1_SecondaryValueSet(pwm_lerp8(value));
+    OC1_PrimaryValueSet(pwm_lerp8(value));
+    log_write(LOG_EVENT_BLINKER_OUTPUT, LOG_BLINKER_R, value);
 }
 
 static const Led blinker_leds[] =
@@ -43,6 +47,16 @@ static const Led blinker_leds[] =
     blinker_l_drive,
     blinker_r_drive
 };
+
+static void blinker_phase_set(
+    BlinkerState *state,
+    BlinkerPhase phase,
+    u32 now_ms)
+{
+    state->phase = phase;
+    state->phase_started_at_ms = now_ms;
+    log_write(LOG_EVENT_BLINKER_PHASE, state->side, phase);
+}
 
 static bool blinker_transition_start(
     BlinkerState *state,
@@ -54,11 +68,11 @@ static bool blinker_transition_start(
 {
     if (!hid_transit(state->led, target_value, duration_ms, interpolation))
     {
+        log_write(LOG_EVENT_BLINKER_TRANSITION_REJECTED, state->side, phase);
         return false;
     }
 
-    state->phase = phase;
-    state->phase_started_at_ms = now_ms;
+    blinker_phase_set(state, phase, now_ms);
     return true;
 }
 
@@ -75,7 +89,7 @@ static void blinker_update(BlinkerState *state, bool enabled, u32 now_ms)
 
         if (state->phase == BLINKER_PHASE_GAP)
         {
-            state->phase = BLINKER_PHASE_DISABLED;
+            blinker_phase_set(state, BLINKER_PHASE_DISABLED, now_ms);
             return;
         }
 
@@ -83,7 +97,7 @@ static void blinker_update(BlinkerState *state, bool enabled, u32 now_ms)
         {
             if (elapsed_ms >= BLINKER_STOP_FADE_MS)
             {
-                state->phase = BLINKER_PHASE_DISABLED;
+                blinker_phase_set(state, BLINKER_PHASE_DISABLED, now_ms);
             }
 
             return;
@@ -131,8 +145,7 @@ static void blinker_update(BlinkerState *state, bool enabled, u32 now_ms)
         case BLINKER_PHASE_FADING:
             if (elapsed_ms >= BLINKER_FADE_MS)
             {
-                state->phase = BLINKER_PHASE_GAP;
-                state->phase_started_at_ms = now_ms;
+                blinker_phase_set(state, BLINKER_PHASE_GAP, now_ms);
             }
             break;
 
@@ -165,6 +178,7 @@ void blinker_set_l(bool enabled)
     al_critical_enter();
     blinker_l_enabled = enabled;
     al_critical_exit();
+    log_write(LOG_EVENT_BLINKER_SET, LOG_BLINKER_L, enabled);
 }
 
 void blinker_set_r(bool enabled)
@@ -172,6 +186,7 @@ void blinker_set_r(bool enabled)
     al_critical_enter();
     blinker_r_enabled = enabled;
     al_critical_exit();
+    log_write(LOG_EVENT_BLINKER_SET, LOG_BLINKER_R, enabled);
 }
 
 void blinker_task(void *params)
@@ -184,20 +199,26 @@ void blinker_task(void *params)
     u32 now_ms;
 
     unused(params);
+    log_write(LOG_EVENT_BLINKER_TASK_START, 0, 0);
 
     if (!hid_init(blinker_leds, 2))
     {
+        log_write(LOG_EVENT_BLINKER_HID_INIT, false, 2);
         al_task_delete(NULL);
         return;
     }
 
+    log_write(LOG_EVENT_BLINKER_HID_INIT, true, 2);
+
     l_state.led = blinker_l_drive;
     l_state.phase_started_at_ms = 0;
     l_state.phase = BLINKER_PHASE_DISABLED;
+    l_state.side = LOG_BLINKER_L;
 
     r_state.led = blinker_r_drive;
     r_state.phase_started_at_ms = 0;
     r_state.phase = BLINKER_PHASE_DISABLED;
+    r_state.side = LOG_BLINKER_R;
 
     previous_wake_tick = xTaskGetTickCount();
 

@@ -79,22 +79,30 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
+#include "uart2.h"
+#include "ext_int.h"
+#include "uart1.h"
 #include "oc1.h"
-#include "interrupt_manager.h"
-#include "traps.h"
 #include "oc4.h"
+#include "i2c1.h"
 #include "oc3.h"
 #include "oc2.h"
+#include "interrupt_manager.h"
+#include "traps.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    INTERRUPT_Initialize();
     CLOCK_Initialize();
+    INTERRUPT_Initialize();
+    UART2_Initialize();
     OC4_Initialize();
+    I2C1_Initialize();
+    UART1_Initialize();
     OC1_Initialize();
     OC3_Initialize();
     OC2_Initialize();
+    EXT_INT_Initialize();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }
 

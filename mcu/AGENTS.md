@@ -68,6 +68,7 @@ This repository contains the firmware project for the **Microchip PIC24EP128MC20
 - `led.c` / `led.h`: Universal normalized LED output interface backed by driver callbacks.
 - `hid.c` / `hid.h`: RTOS-driven LED transition engine with fixed-point interpolation.
 - `blinker.c` / `blinker.h`: Incandescent-style left (OC3) and right (OC1) blinker animations.
+- `log.c` / `log.h`: Structured logs streamed through UART1 at 115200 8N1 and retained in a debugger-visible ring buffer.
 - `FreeRTOSConfig.h`: FreeRTOS kernel configuration (1 kHz tick rate, 69.09375 MHz CPU instruction clock, preemption enabled, 4KB heap).
 - `FreeRTOS/`: FreeRTOS V11 kernel and PIC24/dsPIC port files:
   - `FreeRTOS/Source/`: Kernel implementation files (`tasks.c`, `queue.c`, `list.c`, `timers.c`, `event_groups.c`, `stream_buffer.c`).
@@ -79,6 +80,7 @@ This repository contains the firmware project for the **Microchip PIC24EP128MC20
   - `clock.c` / `clock.h`: PLL and clock frequency configurations.
   - `pin_manager.c` / `pin_manager.h`: Pin direction, PPS (Peripheral Pin Select), and analog/digital modes.
   - `oc1.c` - `oc4.c`: Output Compare / PWM modules.
+  - `uart1.c` / `uart1.h`: UART1 logging transport on TX RP20 (RA4) and RX RP25 (RA9).
   - `interrupt_manager.c`: Global and peripheral interrupt priorities.
   - `traps.c`: Hardware exception and error trap handlers.
   - `reset.c`: Reset cause handling.

@@ -71,8 +71,8 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.171.5"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu16.Mcu16PeripheralLibrary" version="1.171.5"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -11138,8 +11138,24 @@
          <hash>d1de838dacfb55f992685eaaacab0933a6a1758489229ae813af8f2793866c9f</hash>
       </entry>
       <entry>
+         <file>mcc_generated_files/ext_int.c</file>
+         <hash>4ba73da60550d14c7c711a6928021f33624f614bd98dfaeb765ad32d6dd5ca36</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/ext_int.h</file>
+         <hash>ea96aa774be76fd309b5a64aed515cf3940907f121e46e04fcdd9477138263d5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/i2c1.c</file>
+         <hash>0034af5cc4de9aea607d1ef9d009f77b06b1fca8e3a142b5a895f6988b56026e</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/i2c1.h</file>
+         <hash>a5ffffd8083ac463e6f2894d1a625cc851d182d962b3fe71934747009fac4479</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
-         <hash>4d7d336ac7aff6ace749d39da0d8d43e7171895601909af9b0d14bcac152669e</hash>
+         <hash>4f261505eb58f61ba67e4377846486d937734f5992443437f91240f26902cba7</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.h</file>
@@ -11151,7 +11167,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/mcc.h</file>
-         <hash>cb4e4b5d0309b69f06303c6e4dd46585b96e3542122eb1cbdf6fefbbefad4ab8</hash>
+         <hash>8691728e98985b3f97e3bc00603163c192d3e01817282d4b43856f0caf1725b2</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/oc1.c</file>
@@ -11187,11 +11203,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>
-         <hash>3bfbe79c57317be6281f409d8598a9c8b62f3d33fdcaa09f6629f213368cc96b</hash>
+         <hash>7b8b837755a0f4fab6f4ff8b524c5be24efc5a76f65ddfcfa4c7fb19d4f23193</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.h</file>
-         <hash>447970ed9965751b3e21c037bbc2a7bf0afd04d7376ae044cde02c5ab85d1f8e</hash>
+         <hash>5d21477bb9523139a6f88033f25a04a088e4946466e4f12daf79816f1028f50d</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/reset.c</file>
@@ -11207,7 +11223,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files/system.c</file>
-         <hash>a25e26c9e31418cf65735b9c0ced443e36876b6755cbbc55ca53f9e6ecc08b73</hash>
+         <hash>08c37db970f8ab013f7b77db6a913706628cd6c95c96b084209bcb1341a3c129</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/system.h</file>
@@ -11224,6 +11240,22 @@
       <entry>
          <file>mcc_generated_files/traps.h</file>
          <hash>55787a26bba4f23f278fe9dab3376743aa70ddfce6fc8112d332e11bbb34f2bb</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/uart1.c</file>
+         <hash>15d51e0aead32c5b28461deb9a6d108f4873fd31501e9e09b505d1f95c7d6221</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/uart1.h</file>
+         <hash>3cf838a2a109e0b85b1a58f65e185f7c718633edfcae81002b44870c454f3941</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/uart2.c</file>
+         <hash>d6ea64bac04a4cf63f2ee586baaf24f6cfc0d9061921ee3961e36ec0f59cba49</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/uart2.h</file>
+         <hash>17a9c67a64ee1c36b02b66cae37d4b88b61e6d40fb881acec1550ba37c1e9a58</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/watchdog.h</file>
