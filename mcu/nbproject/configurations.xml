@@ -44,6 +44,7 @@
       <itemPath>al.h</itemPath>
       <itemPath>led.h</itemPath>
       <itemPath>hid.h</itemPath>
+      <itemPath>blinker.h</itemPath>
       <itemPath>FreeRTOSConfig.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -86,6 +87,7 @@
         <itemPath>mcc_generated_files/reset.c</itemPath>
         <itemPath>mcc_generated_files/oc2.c</itemPath>
       </logicalFolder>
+      <itemPath>blinker.c</itemPath>
       <itemPath>hid.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>main.c</itemPath>

@@ -4,18 +4,31 @@
  */
 
 #include "al.h"
+#include "blinker.h"
 
-#define APP_MAIN_TASK_STACK_WORDS configMINIMAL_STACK_SIZE
-#define APP_MAIN_TASK_PRIORITY    (tskIDLE_PRIORITY + 2)
-#define APP_HEARTBEAT_PERIOD_MS   1000UL
+#define APP_DEMO_TASK_STACK_WORDS    configMINIMAL_STACK_SIZE
+#define APP_DEMO_TASK_PRIORITY       (tskIDLE_PRIORITY + 1)
+#define APP_BLINKER_TASK_STACK_WORDS configMINIMAL_STACK_SIZE
+#define APP_BLINKER_TASK_PRIORITY    (tskIDLE_PRIORITY + 2)
+#define APP_DEMO_L_STOP_MS           850UL
+#define APP_DEMO_R_STOP_DELAY_MS     180UL
+#define APP_DEMO_RESTART_DELAY_MS    1000UL
 
-static void app_main_task(void *params)
+static void app_blinker_demo_task(void *params)
 {
     unused(params);
 
     forever
     {
-        task_hold(APP_HEARTBEAT_PERIOD_MS);
+        blinker_set_l(true);
+        blinker_set_r(true);
+        task_hold(APP_DEMO_L_STOP_MS);
+
+        blinker_set_l(false);
+        task_hold(APP_DEMO_R_STOP_DELAY_MS);
+
+        blinker_set_r(false);
+        task_hold(APP_DEMO_RESTART_DELAY_MS);
     }
 }
 
@@ -24,11 +37,20 @@ int main(void)
     al_system_init();
 
     al_task_create(
-        app_main_task,
-        "main_task",
-        APP_MAIN_TASK_STACK_WORDS,
+        blinker_task,
+        "blinker_task",
+        APP_BLINKER_TASK_STACK_WORDS,
         NULL,
-        APP_MAIN_TASK_PRIORITY,
+        APP_BLINKER_TASK_PRIORITY,
+        NULL
+    );
+
+    al_task_create(
+        app_blinker_demo_task,
+        "blinker_demo",
+        APP_DEMO_TASK_STACK_WORDS,
+        NULL,
+        APP_DEMO_TASK_PRIORITY,
         NULL
     );
 

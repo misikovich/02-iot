@@ -16,6 +16,7 @@ foreach(source_file ${mcu_default_default_XC16_FILE_TYPE_assemblePreproc})
 endforeach()
 
 set(mcu_default_default_XC16_FILE_TYPE_compile
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../blinker.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../hid.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../led.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../main.c"
