@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "microchip.mplab-extension-pack",
+        "microchip.mplab-code-configurator",
+        "ms-vscode.cpptools"
+    ]
+}
