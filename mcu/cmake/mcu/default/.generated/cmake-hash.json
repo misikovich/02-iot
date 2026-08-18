@@ -1,7 +1,7 @@
 {
     "hashFileVersion": "1.1.0",
     "projectFileHash": "55608e7268bea8a4895798643c9b1df6357417be170a84d4d2b921e7b4753b3f",
-    "cmakeFilesHash": "5841851d9c96d5c2ef20367512f7b60d3234a918469f23b883fc1f9ffad0bf08",
+    "cmakeFilesHash": "840c35f70e93864e24ac0649f4706b1f3b1a40f617a6e84ad98b6617697780eb",
     "cmakerVersion": "4.3.0",
     "workspacePath": "/home/ss1/Projects/02-iot/mcu"
 }
