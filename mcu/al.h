@@ -33,6 +33,7 @@ typedef int64_t  i64;
 #define func_hold(f, ms) do { (f); task_hold((ms)); } while(0)          // executes f then holds for ms
 #define unused(x)        (void)(x)
 #define forever          for(;;)
+#define len(arr) (sizeof((arr)) / sizeof((arr)[0]))
 
 #ifndef min
 #define min(a, b)        ((a) < (b) ? (a) : (b))

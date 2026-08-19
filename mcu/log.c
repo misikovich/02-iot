@@ -27,12 +27,6 @@ static const char *log_event_name(u16 event)
             return "BLINKER_SET";
         case LOG_EVENT_BLINKER_TASK_START:
             return "BLINKER_TASK_START";
-        case LOG_EVENT_BLINKER_HID_INIT:
-            return "BLINKER_HID_INIT";
-        case LOG_EVENT_BLINKER_PHASE:
-            return "BLINKER_PHASE";
-        case LOG_EVENT_BLINKER_TRANSITION_REJECTED:
-            return "BLINKER_TRANSITION_REJECTED";
         case LOG_EVENT_BLINKER_OUTPUT:
             return "BLINKER_OUTPUT";
     }

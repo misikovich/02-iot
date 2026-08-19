@@ -28,9 +28,6 @@ typedef enum
 
     LOG_EVENT_BLINKER_SET = 10,
     LOG_EVENT_BLINKER_TASK_START,
-    LOG_EVENT_BLINKER_HID_INIT,
-    LOG_EVENT_BLINKER_PHASE,
-    LOG_EVENT_BLINKER_TRANSITION_REJECTED,
     LOG_EVENT_BLINKER_OUTPUT
 } LogEvent;
 
@@ -47,14 +44,6 @@ typedef enum
     LOG_BLINKER_R
 } LogBlinkerSide;
 
-typedef enum
-{
-    LOG_BLINKER_PHASE_DISABLED = 0,
-    LOG_BLINKER_PHASE_RISING,
-    LOG_BLINKER_PHASE_FADING,
-    LOG_BLINKER_PHASE_GAP,
-    LOG_BLINKER_PHASE_STOPPING
-} LogBlinkerPhase;
 
 typedef struct
 {
@@ -72,9 +61,6 @@ typedef struct
  * Event arguments:
  * - LOG_EVENT_TASK_CREATE: task, xTaskCreate result
  * - LOG_EVENT_BLINKER_SET: side, enabled
- * - LOG_EVENT_BLINKER_HID_INIT: success, LED count
- * - LOG_EVENT_BLINKER_PHASE: side, phase
- * - LOG_EVENT_BLINKER_TRANSITION_REJECTED: side, requested phase
  * - LOG_EVENT_BLINKER_OUTPUT: side, normalized output
  */
 extern volatile LogEntry log_entries[LOG_CAPACITY];

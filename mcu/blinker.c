@@ -1,34 +1,50 @@
 #include "blinker.h"
+#include "blinker_seq.h"
+#include "led.h"
 #include "log.h"
 
 #include "mcc_generated_files/oc1.h"
 #include "mcc_generated_files/oc3.h"
 
-#define BLINKER_RISE_MS      80U
-#define BLINKER_FADE_MS      320U
-#define BLINKER_GAP_MS       300U
-#define BLINKER_STOP_FADE_MS 160U
-#define BLINKER_TICK_MS      (1000U / HID_TPS)
+#define BLINKER_TIMEBASE_MS 1000U
+#define BLINKER_FRAME_COUNT len(BLINKER_SEQ)
+
+#if !defined(BLINKER_SEQ_TPS)
+#error "blinker_seq.h must define BLINKER_SEQ_TPS"
+#endif
+
+#if !defined(BLINKER_SEQ_PEAK_FRAME)
+#error "blinker_seq.h must define BLINKER_SEQ_PEAK_FRAME"
+#endif
+
+#if BLINKER_SEQ_TPS == 0U || BLINKER_SEQ_TPS > BLINKER_TIMEBASE_MS
+#error "BLINKER_SEQ_TPS must be between 1 and 1000"
+#endif
+
+typedef char BlinkerSeqFrameCountValid[
+    BLINKER_FRAME_COUNT > 0U && BLINKER_FRAME_COUNT <= UINT16_MAX ? 1 : -1
+];
+
+typedef char BlinkerSeqPeakFrameValid[
+    BLINKER_SEQ_PEAK_FRAME < BLINKER_FRAME_COUNT ? 1 : -1
+];
 
 typedef enum
 {
-    BLINKER_PHASE_DISABLED,
-    BLINKER_PHASE_RISING,
-    BLINKER_PHASE_FADING,
-    BLINKER_PHASE_GAP,
-    BLINKER_PHASE_STOPPING
-} BlinkerPhase;
+    BLINKER_L,
+    BLINKER_R,
+    BLINKER_COUNT
+} BlinkerIndex;
 
 typedef struct
 {
     Led led;
-    u32 phase_started_at_ms;
-    BlinkerPhase phase;
     LogBlinkerSide side;
-} BlinkerState;
-
-static volatile bool blinker_l_enabled;
-static volatile bool blinker_r_enabled;
+    volatile bool requested;
+    u16 frame;
+    u8 output_value;
+    bool running;
+} Blinker;
 
 static void blinker_l_drive(u8 value)
 {
@@ -42,195 +58,180 @@ static void blinker_r_drive(u8 value)
     log_write(LOG_EVENT_BLINKER_OUTPUT, LOG_BLINKER_R, value);
 }
 
-static const Led blinker_leds[] =
+static Blinker blinkers[BLINKER_COUNT] =
 {
-    blinker_l_drive,
-    blinker_r_drive
+    {
+        .led = blinker_l_drive,
+        .side = LOG_BLINKER_L
+    },
+    {
+        .led = blinker_r_drive,
+        .side = LOG_BLINKER_R
+    }
 };
 
-static void blinker_phase_set(
-    BlinkerState *state,
-    BlinkerPhase phase,
-    u32 now_ms)
+static void blinker_output_set(Blinker *blinker, u8 value)
 {
-    state->phase = phase;
-    state->phase_started_at_ms = now_ms;
-    log_write(LOG_EVENT_BLINKER_PHASE, state->side, phase);
-}
-
-static bool blinker_transition_start(
-    BlinkerState *state,
-    u8 target_value,
-    u32 duration_ms,
-    HidInterpolation interpolation,
-    BlinkerPhase phase,
-    u32 now_ms)
-{
-    if (!hid_transit(state->led, target_value, duration_ms, interpolation))
+    if (blinker->output_value == value)
     {
-        log_write(LOG_EVENT_BLINKER_TRANSITION_REJECTED, state->side, phase);
-        return false;
-    }
-
-    blinker_phase_set(state, phase, now_ms);
-    return true;
-}
-
-static void blinker_update(BlinkerState *state, bool enabled, u32 now_ms)
-{
-    u32 elapsed_ms = now_ms - state->phase_started_at_ms;
-
-    if (!enabled)
-    {
-        if (state->phase == BLINKER_PHASE_DISABLED)
-        {
-            return;
-        }
-
-        if (state->phase == BLINKER_PHASE_GAP)
-        {
-            blinker_phase_set(state, BLINKER_PHASE_DISABLED, now_ms);
-            return;
-        }
-
-        if (state->phase == BLINKER_PHASE_STOPPING)
-        {
-            if (elapsed_ms >= BLINKER_STOP_FADE_MS)
-            {
-                blinker_phase_set(state, BLINKER_PHASE_DISABLED, now_ms);
-            }
-
-            return;
-        }
-
-        blinker_transition_start(
-            state,
-            0,
-            BLINKER_STOP_FADE_MS,
-            hid_inter_smoothstep,
-            BLINKER_PHASE_STOPPING,
-            now_ms
-        );
         return;
     }
 
-    switch (state->phase)
+    blinker->output_value = value;
+    led_set(blinker->led, value);
+}
+
+static void blinker_stop(Blinker *blinker)
+{
+    blinker->running = false;
+    blinker->frame = 0;
+}
+
+static void blinker_frame_advance(Blinker *blinker)
+{
+    blinker->frame++;
+
+    if (blinker->frame >= BLINKER_FRAME_COUNT)
     {
-        case BLINKER_PHASE_DISABLED:
-        case BLINKER_PHASE_STOPPING:
-            blinker_transition_start(
-                state,
-                UINT8_MAX,
-                BLINKER_RISE_MS,
-                hid_inter_linear,
-                BLINKER_PHASE_RISING,
-                now_ms
-            );
-            break;
-
-        case BLINKER_PHASE_RISING:
-            if (elapsed_ms >= BLINKER_RISE_MS)
-            {
-                blinker_transition_start(
-                    state,
-                    0,
-                    BLINKER_FADE_MS,
-                    hid_inter_smoothstep,
-                    BLINKER_PHASE_FADING,
-                    now_ms
-                );
-            }
-            break;
-
-        case BLINKER_PHASE_FADING:
-            if (elapsed_ms >= BLINKER_FADE_MS)
-            {
-                blinker_phase_set(state, BLINKER_PHASE_GAP, now_ms);
-            }
-            break;
-
-        case BLINKER_PHASE_GAP:
-            if (elapsed_ms >= BLINKER_GAP_MS)
-            {
-                blinker_transition_start(
-                    state,
-                    UINT8_MAX,
-                    BLINKER_RISE_MS,
-                    hid_inter_linear,
-                    BLINKER_PHASE_RISING,
-                    now_ms
-                );
-            }
-            break;
+        blinker->frame = 0;
     }
 }
 
-static void blinker_enabled_get(bool *l_enabled, bool *r_enabled)
+static void blinker_update(Blinker *blinker, bool requested)
+{
+    u16 next_frame;
+
+    if (!blinker->running)
+    {
+        if (requested)
+        {
+            blinker->running = true;
+            blinker->frame = 0;
+        }
+    }
+    else if (requested)
+    {
+        blinker_frame_advance(blinker);
+    }
+    else if (blinker->frame < BLINKER_SEQ_PEAK_FRAME)
+    {
+        if (blinker->frame == 0)
+        {
+            blinker_stop(blinker);
+        }
+        else
+        {
+            blinker->frame--;
+        }
+    }
+    else if (BLINKER_SEQ[blinker->frame] == 0U)
+    {
+        blinker_stop(blinker);
+    }
+    else
+    {
+        next_frame = (u16)(blinker->frame + 1U);
+
+        if (
+            next_frame >= BLINKER_FRAME_COUNT ||
+            BLINKER_SEQ[next_frame] == 0U)
+        {
+            blinker_stop(blinker);
+        }
+        else
+        {
+            blinker->frame = next_frame;
+        }
+    }
+
+    blinker_output_set(
+        blinker,
+        blinker->running ? BLINKER_SEQ[blinker->frame] : 0U
+    );
+}
+
+static void blinker_requested_set(Blinker *blinker, bool requested)
 {
     al_critical_enter();
-    *l_enabled = blinker_l_enabled;
-    *r_enabled = blinker_r_enabled;
+    blinker->requested = requested;
     al_critical_exit();
+
+    log_write(LOG_EVENT_BLINKER_SET, blinker->side, requested);
+}
+
+static void blinker_requested_get(bool requested[BLINKER_COUNT])
+{
+    u8 i;
+
+    al_critical_enter();
+
+    for (i = 0; i < BLINKER_COUNT; i++)
+    {
+        requested[i] = blinkers[i].requested;
+    }
+
+    al_critical_exit();
+}
+
+static u32 blinker_delay_ms_get(u16 *remainder)
+{
+    u32 accumulated_remainder;
+    u32 delay_ms;
+
+    delay_ms = BLINKER_TIMEBASE_MS / BLINKER_SEQ_TPS;
+    accumulated_remainder =
+        (u32)*remainder + (BLINKER_TIMEBASE_MS % BLINKER_SEQ_TPS);
+
+    if (accumulated_remainder >= BLINKER_SEQ_TPS)
+    {
+        accumulated_remainder -= BLINKER_SEQ_TPS;
+        delay_ms++;
+    }
+
+    *remainder = (u16)accumulated_remainder;
+    return delay_ms;
 }
 
 void blinker_set_l(bool enabled)
 {
-    al_critical_enter();
-    blinker_l_enabled = enabled;
-    al_critical_exit();
-    log_write(LOG_EVENT_BLINKER_SET, LOG_BLINKER_L, enabled);
+    blinker_requested_set(&blinkers[BLINKER_L], enabled);
 }
 
 void blinker_set_r(bool enabled)
 {
-    al_critical_enter();
-    blinker_r_enabled = enabled;
-    al_critical_exit();
-    log_write(LOG_EVENT_BLINKER_SET, LOG_BLINKER_R, enabled);
+    blinker_requested_set(&blinkers[BLINKER_R], enabled);
 }
 
 void blinker_task(void *params)
 {
-    BlinkerState l_state;
-    BlinkerState r_state;
     TickType_t previous_wake_tick;
-    bool l_enabled;
-    bool r_enabled;
-    u32 now_ms;
+    bool requested[BLINKER_COUNT];
+    u16 delay_remainder;
+    u8 i;
 
     unused(params);
     log_write(LOG_EVENT_BLINKER_TASK_START, 0, 0);
 
-    if (!hid_init(blinker_leds, 2))
+    for (i = 0; i < BLINKER_COUNT; i++)
     {
-        log_write(LOG_EVENT_BLINKER_HID_INIT, false, 2);
-        al_task_delete(NULL);
-        return;
+        led_set(blinkers[i].led, 0);
     }
 
-    log_write(LOG_EVENT_BLINKER_HID_INIT, true, 2);
-
-    l_state.led = blinker_l_drive;
-    l_state.phase_started_at_ms = 0;
-    l_state.phase = BLINKER_PHASE_DISABLED;
-    l_state.side = LOG_BLINKER_L;
-
-    r_state.led = blinker_r_drive;
-    r_state.phase_started_at_ms = 0;
-    r_state.phase = BLINKER_PHASE_DISABLED;
-    r_state.side = LOG_BLINKER_R;
-
     previous_wake_tick = xTaskGetTickCount();
+    delay_remainder = 0;
 
     forever
     {
-        blinker_enabled_get(&l_enabled, &r_enabled);
-        now_ms = al_millis();
+        blinker_requested_get(requested);
 
-        blinker_update(&l_state, l_enabled, now_ms);
-        blinker_update(&r_state, r_enabled, now_ms);
-        hid_tick();
+        for (i = 0; i < BLINKER_COUNT; i++)
+        {
+            blinker_update(&blinkers[i], requested[i]);
+        }
 
-        al_task_delay_until_ms(&previous_wake_tick, BLINKER_TICK_MS);
+        al_task_delay_until_ms(
+            &previous_wake_tick,
+            blinker_delay_ms_get(&delay_remainder)
+        );
     }
 }

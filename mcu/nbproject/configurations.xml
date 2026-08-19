@@ -47,8 +47,8 @@
       </logicalFolder>
       <itemPath>al.h</itemPath>
       <itemPath>led.h</itemPath>
-      <itemPath>hid.h</itemPath>
       <itemPath>blinker.h</itemPath>
+      <itemPath>blinker_seq.h</itemPath>
       <itemPath>log.h</itemPath>
       <itemPath>FreeRTOSConfig.h</itemPath>
     </logicalFolder>
@@ -98,7 +98,6 @@
       </logicalFolder>
       <itemPath>log.c</itemPath>
       <itemPath>blinker.c</itemPath>
-      <itemPath>hid.c</itemPath>
       <itemPath>led.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
