@@ -4,14 +4,14 @@ from math import floor
 from pathlib import Path
 
 
-RISE_MS = 80
-HOLD_MS = 160
-FALL_MS = 320
-GAP_MS = 100
-TPS = 100
+RISE_MS = 120
+HOLD_MS = 40
+FALL_MS = 550
+GAP_MS = 200
+TPS = 125
 
 MIN = 0
-MAX = 100
+MAX = 60
 GAMMA = True
 
 _GAMMA_EXPONENT = 2.0

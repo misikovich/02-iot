@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
 <rect width="100%" height="100%" fill="#ffffff"/>
 <text x="600" y="32" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Blinker sequence</text>
-<text x="600" y="57" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#444444">100 TPS · 1.515 Hz · gamma on</text>
+<text x="600" y="57" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#444444">125 TPS · 1.096 Hz · gamma on</text>
 <line x1="90" y1="570.00" x2="1160" y2="570.00" stroke="#dddddd" stroke-width="1"/>
 <text x="78" y="575.00" text-anchor="end" font-family="sans-serif" font-size="12" fill="#444444">0</text>
 <line x1="90" y1="472.00" x2="1160" y2="472.00" stroke="#dddddd" stroke-width="1"/>
@@ -17,35 +17,35 @@
 <line x1="90.00" y1="80" x2="90.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
 <text x="90.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">0</text>
 <line x1="197.00" y1="80" x2="197.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="197.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">66</text>
+<text x="197.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">91</text>
 <line x1="304.00" y1="80" x2="304.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="304.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">132</text>
+<text x="304.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">182</text>
 <line x1="411.00" y1="80" x2="411.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="411.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">198</text>
+<text x="411.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">274</text>
 <line x1="518.00" y1="80" x2="518.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="518.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">264</text>
+<text x="518.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">365</text>
 <line x1="625.00" y1="80" x2="625.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="625.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">330</text>
+<text x="625.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">456</text>
 <line x1="732.00" y1="80" x2="732.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="732.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">396</text>
+<text x="732.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">547</text>
 <line x1="839.00" y1="80" x2="839.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="839.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">462</text>
+<text x="839.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">638</text>
 <line x1="946.00" y1="80" x2="946.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="946.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">528</text>
+<text x="946.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">730</text>
 <line x1="1053.00" y1="80" x2="1053.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="1053.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">594</text>
+<text x="1053.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">821</text>
 <line x1="1160.00" y1="80" x2="1160.00" y2="570" stroke="#eeeeee" stroke-width="1"/>
-<text x="1160.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">660</text>
-<text x="154.85" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Rise</text>
-<line x1="219.70" y1="80" x2="219.70" y2="570" stroke="#777777" stroke-width="1" stroke-dasharray="5 5"/>
-<text x="349.39" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Hold</text>
-<line x1="479.09" y1="80" x2="479.09" y2="570" stroke="#777777" stroke-width="1" stroke-dasharray="5 5"/>
-<text x="738.48" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Fall</text>
-<line x1="997.88" y1="80" x2="997.88" y2="570" stroke="#777777" stroke-width="1" stroke-dasharray="5 5"/>
-<text x="1078.94" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Gap</text>
+<text x="1160.00" y="594" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#444444">912</text>
+<text x="160.39" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Rise</text>
+<line x1="230.79" y1="80" x2="230.79" y2="570" stroke="#777777" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="254.25" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Hold</text>
+<line x1="277.72" y1="80" x2="277.72" y2="570" stroke="#777777" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="601.54" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Fall</text>
+<line x1="925.35" y1="80" x2="925.35" y2="570" stroke="#777777" stroke-width="1" stroke-dasharray="5 5"/>
+<text x="1042.68" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#333333">Gap</text>
 <line x1="90" y1="570" x2="1160" y2="570" stroke="#222222" stroke-width="2"/>
 <line x1="90" y1="80" x2="90" y2="570" stroke="#222222" stroke-width="2"/>
-<path d="M 90.00 570.00 H 106.21 V 566.16 H 122.42 V 558.47 H 138.64 V 543.10 H 154.85 V 521.96 H 171.06 V 495.06 H 187.27 V 462.39 H 203.48 V 422.04 H 219.70 V 377.84 H 235.91 V 377.84 H 252.12 V 377.84 H 268.33 V 377.84 H 284.55 V 377.84 H 300.76 V 377.84 H 316.97 V 377.84 H 333.18 V 377.84 H 349.39 V 377.84 H 365.61 V 377.84 H 381.82 V 377.84 H 398.03 V 377.84 H 414.24 V 377.84 H 430.45 V 377.84 H 446.67 V 377.84 H 462.88 V 377.84 H 479.09 V 377.84 H 495.30 V 389.37 H 511.52 V 400.90 H 527.73 V 412.43 H 543.94 V 422.04 H 560.15 V 433.57 H 576.36 V 443.18 H 592.58 V 452.78 H 608.79 V 462.39 H 625.00 V 470.08 H 641.21 V 479.69 H 657.42 V 487.37 H 673.64 V 495.06 H 689.85 V 502.75 H 706.06 V 508.51 H 722.27 V 516.20 H 738.48 V 521.96 H 754.70 V 527.73 H 770.91 V 533.49 H 787.12 V 537.33 H 803.33 V 543.10 H 819.55 V 546.94 H 835.76 V 550.78 H 851.97 V 554.63 H 868.18 V 558.47 H 884.39 V 560.39 H 900.61 V 562.31 H 916.82 V 566.16 H 933.03 V 566.16 H 949.24 V 568.08 H 965.45 V 570.00 H 981.67 V 570.00 H 997.88 V 570.00 H 1014.09 V 570.00 H 1030.30 V 570.00 H 1046.52 V 570.00 H 1062.73 V 570.00 H 1078.94 V 570.00 H 1095.15 V 570.00 H 1111.36 V 570.00 H 1127.58 V 570.00 H 1143.79 V 570.00 H 1160.00" fill="none" stroke="#1261a0" stroke-width="3" stroke-linejoin="miter"/>
+<path d="M 90.00 570.00 H 99.39 V 570.00 H 108.77 V 568.08 H 118.16 V 566.16 H 127.54 V 562.31 H 136.93 V 556.55 H 146.32 V 550.78 H 155.70 V 545.02 H 165.09 V 537.33 H 174.47 V 527.73 H 183.86 V 518.12 H 193.25 V 508.51 H 202.63 V 496.98 H 212.02 V 483.53 H 221.40 V 470.08 H 230.79 V 454.71 H 240.18 V 454.71 H 249.56 V 454.71 H 258.95 V 454.71 H 268.33 V 454.71 H 277.72 V 454.71 H 287.11 V 458.55 H 296.49 V 460.47 H 305.88 V 464.31 H 315.26 V 468.16 H 324.65 V 470.08 H 334.04 V 473.92 H 343.42 V 477.76 H 352.81 V 479.69 H 362.19 V 483.53 H 371.58 V 485.45 H 380.96 V 489.29 H 390.35 V 491.22 H 399.74 V 493.14 H 409.12 V 496.98 H 418.51 V 498.90 H 427.89 V 502.75 H 437.28 V 504.67 H 446.67 V 506.59 H 456.05 V 508.51 H 465.44 V 512.35 H 474.82 V 514.27 H 484.21 V 516.20 H 493.60 V 518.12 H 502.98 V 520.04 H 512.37 V 523.88 H 521.75 V 525.80 H 531.14 V 527.73 H 540.53 V 529.65 H 549.91 V 531.57 H 559.30 V 533.49 H 568.68 V 535.41 H 578.07 V 537.33 H 587.46 V 539.25 H 596.84 V 541.18 H 606.23 V 541.18 H 615.61 V 543.10 H 625.00 V 545.02 H 634.39 V 546.94 H 643.77 V 548.86 H 653.16 V 548.86 H 662.54 V 550.78 H 671.93 V 552.71 H 681.32 V 552.71 H 690.70 V 554.63 H 700.09 V 556.55 H 709.47 V 556.55 H 718.86 V 558.47 H 728.25 V 558.47 H 737.63 V 560.39 H 747.02 V 560.39 H 756.40 V 562.31 H 765.79 V 562.31 H 775.18 V 564.24 H 784.56 V 564.24 H 793.95 V 566.16 H 803.33 V 566.16 H 812.72 V 566.16 H 822.11 V 566.16 H 831.49 V 568.08 H 840.88 V 568.08 H 850.26 V 568.08 H 859.65 V 568.08 H 869.04 V 570.00 H 878.42 V 570.00 H 887.81 V 570.00 H 897.19 V 570.00 H 906.58 V 570.00 H 915.96 V 570.00 H 925.35 V 570.00 H 934.74 V 570.00 H 944.12 V 570.00 H 953.51 V 570.00 H 962.89 V 570.00 H 972.28 V 570.00 H 981.67 V 570.00 H 991.05 V 570.00 H 1000.44 V 570.00 H 1009.82 V 570.00 H 1019.21 V 570.00 H 1028.60 V 570.00 H 1037.98 V 570.00 H 1047.37 V 570.00 H 1056.75 V 570.00 H 1066.14 V 570.00 H 1075.53 V 570.00 H 1084.91 V 570.00 H 1094.30 V 570.00 H 1103.68 V 570.00 H 1113.07 V 570.00 H 1122.46 V 570.00 H 1131.84 V 570.00 H 1141.23 V 570.00 H 1150.61 V 570.00 H 1160.00" fill="none" stroke="#1261a0" stroke-width="3" stroke-linejoin="miter"/>
 <text x="600" y="630" text-anchor="middle" font-family="sans-serif" font-size="14">Time (ms)</text>
 <text x="22" y="325" text-anchor="middle" font-family="sans-serif" font-size="14" transform="rotate(-90 22 325)">Output value</text>
 </svg>
