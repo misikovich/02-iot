@@ -19,14 +19,13 @@
 
 static void app_blinker_demo_task(void *params)
 {
-    unused(params);
+    drop(params);
+
+    blinker_set_r(true);
+
+    forever;
 
     forever {
-        blinker_set_r(true);
-    }
-
-    forever
-    {
         blinker_set_l(true);
         blinker_set_r(true);
         task_hold(APP_DEMO_L_STOP_MS);
@@ -49,8 +48,7 @@ int main(void)
     log_write(LOG_EVENT_LOG_INIT, log_ready, LOG_UART_QUEUE_CAPACITY);
     log_write(LOG_EVENT_APP_START, 0, 0);
 
-    if (log_ready)
-    {
+    if (log_ready) {
         task_result = al_task_create(
             log_task,
             "log_task",
@@ -85,9 +83,7 @@ int main(void)
     al_rtos_start();
     log_write(LOG_EVENT_SCHEDULER_RETURNED, 0, 0);
 
-    forever
-    {
-    }
+    forever;
 
     return 0;
 }

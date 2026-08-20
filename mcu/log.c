@@ -123,7 +123,7 @@ void log_task(void *params)
 {
     LogEntry entry;
 
-    unused(params);
+    drop(params);
 
     if (log_uart_queue == NULL)
     {
@@ -146,7 +146,7 @@ void log_write(LogEvent event, i16 arg0, i16 arg1)
 {
     volatile LogEntry *entry;
     LogEntry queued_entry;
-    u32 timestamp_ms = al_millis();
+    u32 timestamp_ms = up_ms();
     u16 index;
     u16 sequence;
 

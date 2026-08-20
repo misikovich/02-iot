@@ -1,0 +1,7 @@
+# Machine-local MPLAB and CMake output
+_build/
+.generated_files/
+cmake/*/*/.generated/
+nbproject/private/
+nbproject/Makefile-local-*.mk
+nbproject/Makefile-genesis.properties

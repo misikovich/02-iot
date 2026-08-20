@@ -8,6 +8,7 @@
 
 #include <xc.h>
 #include <stdint.h>
+typedef unsigned int uint16_t;
 #include <stdbool.h>
 #include <stddef.h>
 
@@ -28,33 +29,38 @@ typedef int16_t  i16;
 typedef int32_t  i32;
 typedef int64_t  i64;
 
-#define mst(ms)          pdMS_TO_TICKS((ms))                             // ms to ticks
-#define task_hold(ms)    vTaskDelay(mst((ms)))                           // vtaskdelay but looks better
-#define func_hold(f, ms) do { (f); task_hold((ms)); } while(0)          // executes f then holds for ms
-#define unused(x)        (void)(x)
-#define forever          for(;;)
+#define mst(ms)          	pdMS_TO_TICKS((ms))                             // ms to ticks
+#define task_hold(ms)    	vTaskDelay(mst((ms)))                           // vtaskdelay but looks better
+#define func_hold(f, ms) 	do { (f); task_hold((ms)); } while(0)          	// executes f then holds for ms
+#define drop(x)        		(void)(x)																				// for unused params in rtos tasks
+#define forever          	for(;;)
 #define len(arr) (sizeof((arr)) / sizeof((arr)[0]))
 
 #ifndef min
-#define min(a, b)        ((a) < (b) ? (a) : (b))
+#define min(a, b)        	((a) < (b) ? (a) : (b))
 #endif
 
 #ifndef max
-#define max(a, b)        ((a) > (b) ? (a) : (b))
+#define max(a, b)        	((a) > (b) ? (a) : (b))
 #endif
 
 #ifndef clamp
-#define clamp(v, lo, hi) min(max((v), (lo)), (hi))
+#define clamp(v, lo, hi) 	min(max((v), (lo)), (hi))
 #endif
 
 #ifndef abs
-#define abs(v)           ((v) < 0 ? -(v) : (v))
+#define abs(v)						((v) < 0 ? -(v) : (v))
 #endif
 
-#define AL_PWM_MAX       3454
+#define AL_PWM_MAX       	3454
 
 /**
- * @brief Maps/interpolates an 8-bit value (0..255) to a full 16-bit range (0..65535).
+ * @brief Interpolates an float value (0.0f..1.0f) to defined lo hi values.
+ */
+#define lerp(v, lo, hi)  	((lo) + (v) * ((hi) - (lo)))
+
+/**
+ * @brief Interpolates an 8-bit value (0..255) to a full 16-bit range (0..65535).
  */
 static inline u16 u16_lerp8(u8 val)
 {
@@ -62,7 +68,7 @@ static inline u16 u16_lerp8(u8 val)
 }
 
 /**
- * @brief Maps/interpolates an 8-bit value (0..255) to the hardware PWM resolution (0..AL_PWM_MAX).
+ * @brief Interpolates an 8-bit value (0..255) to the hardware PWM resolution (0..AL_PWM_MAX).
  */
 static inline u16 pwm_lerp8(u8 v)
 {
@@ -76,7 +82,7 @@ static inline u16 pwm_lerp8(u8 v)
 /**
  * @brief Get system uptime in milliseconds.
  */
-static inline u32 al_millis(void)
+static inline u32 up_ms(void)
 {
     return (u32)(xTaskGetTickCount() * portTICK_PERIOD_MS);
 }

@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/ss1/Projects/02-iot/mcu/_build/mcu/default/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

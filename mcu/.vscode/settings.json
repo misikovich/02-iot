@@ -1,6 +1,7 @@
 {
     "mplab.clangd.compileCommandsDir": "${workspaceFolder}/_build/mcu/default",
     "files.associations": {
+        "*.h": "c",
         "*.gld": "c",
         "*.mc3": "yaml"
     }

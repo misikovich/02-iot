@@ -5,24 +5,24 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/mcc_generated_files",
-                "/opt/microchip/mplabx/v6.35/packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16/support/PIC24E/h",
-                "/opt/microchip/mplabx/v6.35/packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16/support/generic/h",
-                "/opt/microchip/xc16/v2.10/include",
-                "/opt/microchip/xc16/v2.10/support/generic/h",
-                "/opt/microchip/xc16/v2.10/support/PIC24E/h"
+                "/Users/misikovich/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16/support/PIC24E/h",
+                "/Users/misikovich/.mchp_packs/Microchip/dsPIC33E-GM-GP-MC-GU-MU_DFP/1.7.401/xc16/support/generic/h",
+                "/Applications/microchip/xc16/v2.10/include",
+                "/Applications/microchip/xc16/v2.10/support/generic/h",
+                "/Applications/microchip/xc16/v2.10/support/PIC24E/h"
             ],
             "defines": [
-                "__XC16",
                 "__XC16__",
                 "__PIC24E__",
                 "__24EP128MC206__",
                 "__PIC24EP128MC206__",
                 "XPRJ_default=default"
             ],
-            "compilerPath": "/opt/microchip/xc16/v2.10/bin/xc16-gcc",
+            "compilerPath": "/Applications/microchip/xc16/v2.10/bin/xc16-gcc",
+            "compilerArgs": ["-mcpu=24EP128MC206"],
             "cStandard": "gnu99",
             "cppStandard": "gnu++14",
-            "intelliSenseMode": "linux-gcc-x86"
+            "intelliSenseMode": "macos-gcc-arm64"
         }
     ],
     "version": 4

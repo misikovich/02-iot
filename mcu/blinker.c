@@ -209,7 +209,7 @@ void blinker_task(void *params)
     u16 delay_remainder;
     u8 i;
 
-    unused(params);
+    drop(params);
     log_write(LOG_EVENT_BLINKER_TASK_START, 0, 0);
 
     for (i = 0; i < BLINKER_COUNT; i++)

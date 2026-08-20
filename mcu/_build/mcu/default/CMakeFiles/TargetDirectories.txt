@@ -1,6 +1,0 @@
-/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_assemble.dir
-/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_default_XC16_compile.dir
-/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_image_igA9NkaQ.dir
-/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/mcu_default_Bin2Hex.dir
-/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/edit_cache.dir
-/home/ss1/Projects/02-iot/mcu/_build/mcu/default/CMakeFiles/rebuild_cache.dir
