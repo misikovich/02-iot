@@ -200,6 +200,298 @@
 
 */
 #define CPU_RST_SetDigitalOutput() (_TRISC3 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RG6, high using LATG6.
+
+  @Description
+    Sets the GPIO pin, RG6, high using LATG6.
+
+  @Preconditions
+    The RG6 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RG6 high (1)
+    SCK2OUT_SetHigh();
+    </code>
+
+*/
+#define SCK2OUT_SetHigh()          (_LATG6 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RG6, low using LATG6.
+
+  @Description
+    Sets the GPIO pin, RG6, low using LATG6.
+
+  @Preconditions
+    The RG6 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RG6 low (0)
+    SCK2OUT_SetLow();
+    </code>
+
+*/
+#define SCK2OUT_SetLow()           (_LATG6 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RG6, using LATG6.
+
+  @Description
+    Toggles the GPIO pin, RG6, using LATG6.
+
+  @Preconditions
+    The RG6 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RG6
+    SCK2OUT_Toggle();
+    </code>
+
+*/
+#define SCK2OUT_Toggle()           (_LATG6 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RG6.
+
+  @Description
+    Reads the value of the GPIO pin, RG6.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RG6
+    postValue = SCK2OUT_GetValue();
+    </code>
+
+*/
+#define SCK2OUT_GetValue()         _RG6
+/**
+  @Summary
+    Configures the GPIO pin, RG6, as an input.
+
+  @Description
+    Configures the GPIO pin, RG6, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RG6 as an input
+    SCK2OUT_SetDigitalInput();
+    </code>
+
+*/
+#define SCK2OUT_SetDigitalInput()  (_TRISG6 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RG6, as an output.
+
+  @Description
+    Configures the GPIO pin, RG6, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RG6 as an output
+    SCK2OUT_SetDigitalOutput();
+    </code>
+
+*/
+#define SCK2OUT_SetDigitalOutput() (_TRISG6 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RG8, high using LATG8.
+
+  @Description
+    Sets the GPIO pin, RG8, high using LATG8.
+
+  @Preconditions
+    The RG8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RG8 high (1)
+    SDO2_SetHigh();
+    </code>
+
+*/
+#define SDO2_SetHigh()          (_LATG8 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RG8, low using LATG8.
+
+  @Description
+    Sets the GPIO pin, RG8, low using LATG8.
+
+  @Preconditions
+    The RG8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RG8 low (0)
+    SDO2_SetLow();
+    </code>
+
+*/
+#define SDO2_SetLow()           (_LATG8 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RG8, using LATG8.
+
+  @Description
+    Toggles the GPIO pin, RG8, using LATG8.
+
+  @Preconditions
+    The RG8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RG8
+    SDO2_Toggle();
+    </code>
+
+*/
+#define SDO2_Toggle()           (_LATG8 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RG8.
+
+  @Description
+    Reads the value of the GPIO pin, RG8.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RG8
+    postValue = SDO2_GetValue();
+    </code>
+
+*/
+#define SDO2_GetValue()         _RG8
+/**
+  @Summary
+    Configures the GPIO pin, RG8, as an input.
+
+  @Description
+    Configures the GPIO pin, RG8, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RG8 as an input
+    SDO2_SetDigitalInput();
+    </code>
+
+*/
+#define SDO2_SetDigitalInput()  (_TRISG8 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RG8, as an output.
+
+  @Description
+    Configures the GPIO pin, RG8, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RG8 as an output
+    SDO2_SetDigitalOutput();
+    </code>
+
+*/
+#define SDO2_SetDigitalOutput() (_TRISG8 = 0)
 
 /**
     Section: Function Prototypes

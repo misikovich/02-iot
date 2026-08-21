@@ -44,9 +44,11 @@
         <itemPath>mcc_generated_files/ext_int.h</itemPath>
         <itemPath>mcc_generated_files/uart1.h</itemPath>
         <itemPath>mcc_generated_files/i2c1.h</itemPath>
+        <itemPath>mcc_generated_files/spi2.h</itemPath>
       </logicalFolder>
       <itemPath>al.h</itemPath>
       <itemPath>led.h</itemPath>
+      <itemPath>ws2812b.h</itemPath>
       <itemPath>blinker.h</itemPath>
       <itemPath>blinker_seq.h</itemPath>
       <itemPath>log.h</itemPath>
@@ -95,10 +97,12 @@
         <itemPath>mcc_generated_files/ext_int.c</itemPath>
         <itemPath>mcc_generated_files/uart1.c</itemPath>
         <itemPath>mcc_generated_files/i2c1.c</itemPath>
+        <itemPath>mcc_generated_files/spi2.c</itemPath>
       </logicalFolder>
       <itemPath>log.c</itemPath>
       <itemPath>blinker.c</itemPath>
       <itemPath>led.c</itemPath>
+      <itemPath>ws2812b.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
   </logicalFolder>
@@ -183,7 +187,7 @@
         <property key="optimization-level" value="0"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
-        <property key="preprocessor-macros" value=""/>
+        <property key="preprocessor-macros" value="WS2812B_MAX_PIXELS=60"/>
         <property key="scalar-model" value="default"/>
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>

@@ -48,6 +48,8 @@ MKDIR=mkdir
 CP=cp
 CCADMIN=CCadmin
 RANLIB=ranlib
+MP_EXTRA_CC_PRE += -DWS2812B_MAX_PIXELS=60
+
 
 
 # build

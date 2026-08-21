@@ -2,8 +2,8 @@
 
 manifest_file_version: 1.0.0
 project: mcu
-creation_date: 2026-08-20T13:01:50.527+02:00[Europe/Oslo]
-operating_system: Mac OS X
+creation_date: 2026-08-21T09:51:01.206+02:00[Europe/Oslo]
+operating_system: Linux
 mcc_mode: IDE
 mcc_mode_version: v6.35
 device_name: PIC24EP128MC206

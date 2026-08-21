@@ -11,7 +11,8 @@
             "__PIC24E__",
             "__24EP128MC206__",
             "__PIC24EP128MC206__",
-            "XPRJ_default=default"
+            "XPRJ_default=default",
+            "WS2812B_MAX_PIXELS=60"
         ]
     },
     "configurations": [

@@ -21,6 +21,8 @@ static void app_blinker_demo_task(void *params)
 {
     drop(params);
 
+    forever;
+
     blinker_set_r(true);
 
     forever;
